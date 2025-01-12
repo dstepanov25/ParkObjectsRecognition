@@ -8,7 +8,7 @@ $DestinationFolder = "$BasePath\Images"
 Write-Host "DestinationFolder=${DestinationFolder}"
 
 # Make predictions
-cmd /c "$BasePath\YoloModel\yolo_model_env\Scripts\activate.bat && python $BasePath\YoloModel\test_yolo_model.py --source_folder $DestinationFolder --model_path $BasePath\best.pt && deactivate"
+cmd /c "$BasePath\YoloModel\yolo_model_env\Scripts\activate.bat && python $BasePath\YoloModel\test_yolo_model.py --source_folder $DestinationFolder --model_path $BasePath\YoloModel\best.pt && deactivate"
 
 # Move prediction files into DestinationFolder
 $txtFiles = Get-ChildItem -Path "${DestinationFolder}\predict\labels" -Recurse -Filter "*.txt"

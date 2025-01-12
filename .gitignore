@@ -1,0 +1,7 @@
+**/node_modules
+**/YoloDataSet/input/images
+**/YoloDataSet/input/labels
+**/*_env
+**/*_exp*
+*.jpg
+*.pt

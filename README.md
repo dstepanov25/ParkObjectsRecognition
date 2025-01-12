@@ -1,29 +1,12 @@
-# Інструкція для роботи з проектом
+# Instructions for Project Workflow
 
-## 1. Підготовка зображень для тренування
-1. Збережіть зображення для тренування у папці `/Images`.
-2. Використовуючи програму для анотацій (наприклад, [LabelImg](https://github.com/heartexlabs/labelImg)), позначте об'єкти на зображеннях.
-3. Збережіть анотації у форматі YOLO в тій самій папці `/Images`.
+## 1. Preparing Training Images
+1. Save the training images in the `/Images` folder.
+2. Use an annotation tool (e.g., [LabelImg](https://github.com/heartexlabs/labelImg)) to label objects in the images.
+3. Save the annotations in YOLO format in the same `/Images` folder.
 
-## 2. Підготовка датасету для навчання
-1. Запустіть скрипт `PrepareDataSet.ps1`:
-   ```powershell
-   ./PrepareDataSet.ps1
-   ```
-2. Після виконання скрипту, дані для навчання моделі будуть готові.
+## 2. Setting Up the Training Environment
+Run the `setup_env.bat` file located in the `YoloModel` folder.
 
-## 3. Налаштування середовища для навчання
-1. Запустіть файл `setup_env.bat`, який знаходиться у папці `ParkObjectsRecognition\YoloModel`:
-   ```cmd
-   ParkObjectsRecognition\YoloModel\setup_env.bat
-   ```
-
-## 4. Запуск процесу навчання моделі
-1. Відкрийте PowerShell та активуйте віртуальне середовище для навчання:
-   ```powershell
-   yolo_model_env\Scripts\activate
-   ```
-2. Запустіть навчання моделі командою (відредактуйте шлях):
-   ```powershell
-   python train_yolo_model.py --data_dir "C:\ParkObjectsRecognition\YoloDataSet" --epochs 50 --yolo_model yolo11n.pt
-   
+## 3. Starting the Model Training Process
+Run the `run_train.ps1` script. Once the script is executed, the model will be ready.

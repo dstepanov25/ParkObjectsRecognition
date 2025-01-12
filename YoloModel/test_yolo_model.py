@@ -10,7 +10,7 @@ from ultralytics import YOLO
 
 # Parse script arguments
 parser = argparse.ArgumentParser(description="Save Cropped Images.")
-parser.add_argument("--source_folder", required=True, help="Path to the folder containing flyer images.")
+parser.add_argument("--source_folder", required=True, help="Path to the folder containing images.")
 parser.add_argument("--model_path", required=True, help="Path to the YOLO model file (e.g., best.pt).")
 args = parser.parse_args()
 

@@ -8,12 +8,12 @@ function CountClasses {
         [array]$FilePath
     )
 
-    # Читаємо кожен рядок файлу
+    # Read all lines from the file
     Get-Content -Path $FilePath | ForEach-Object {
-        # Отримуємо ID класу (перший елемент у рядку)
+        # Get class ID (first element in the row)
         $classId = ($_ -split '\s+')[0]
 
-        # Підраховуємо кількість об'єктів
+        # Count objects
         if ($classCounts.ContainsKey($classId)) {
             $classCounts[$classId]++
         } else {
@@ -45,10 +45,10 @@ function Copy-ImageAndLabel {
 }
 
 function GenerateDataFile {
-    # Шлях для створення data.yaml
+    # Path to data.yaml
     $outputFile = "${OutputFolder}\data.yaml"
 
-    # Генеруємо вміст data.yaml
+    # Generate data.yaml content
     $dataYaml = @"
 train: images/train
 val:  images/val
@@ -59,7 +59,7 @@ nc: $($classes.Count)
 names: ['$($classes -join "', '")']
 "@
 
-    # Зберігаємо data.yaml
+    # Save data.yaml
     Set-Content -Path $outputFile -Value $dataYaml
 }
 
