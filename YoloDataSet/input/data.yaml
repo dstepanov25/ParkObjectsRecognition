@@ -1,0 +1,7 @@
+train: images/train
+val:  images/val
+test: images/test
+
+nc: 4
+
+names: ['bench', 'gazebo', 'information board', 'trash can']

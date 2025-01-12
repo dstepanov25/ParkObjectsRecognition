@@ -1,0 +1,4 @@
+bench
+gazebo
+information board
+trash can
